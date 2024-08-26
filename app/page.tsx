@@ -5,9 +5,9 @@ export default function Home() {
   return (
     <div className="min-h-screen max-w-screen-2xl mx-auto flex flex-col">
       <Header />
-      <main className="sm:pb-8 sm:px-4">
-        <section className="sm:pl-80 sm:py-14 sm:pr-72">
-          <h1 className="text-4xl font-extralight leading-relaxed">
+      <main className="px-4 sm:pb-8 sm:px-4">
+        <section className="pt-8 pr-20 pb-8 sm:pl-80 sm:py-14 sm:pr-72">
+          <h1 className="text-xl sm:text-4xl font-extralight leading-relaxed">
             Hello, I'm <span>Guidione</span>. <br />
             I am <span>France</span> based Product Designer. <br />
             I lead design at <span>23point5</span> previously at <span>Shopify</span>.
