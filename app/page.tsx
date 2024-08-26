@@ -1,26 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
+import { Header } from "./components/Header";
 
 export default function Home() {
   return (
     <div className="min-h-screen max-w-screen-2xl mx-auto flex flex-col">
-      <header className="flex justify-between items-center sm:px-4 sm:py-2">
-        <div>
-          <Image
-            src='/logo.png'
-            alt="Logo"
-            width={50}
-            height={50}
-            className="rounded-full"
-          />
-        </div>
-
-        <nav>
-          <Link href='/'>Projects</Link>
-          <Link href='/'>About</Link>
-          <Link href='/'>Contact</Link>
-        </nav>
-      </header>
+      <Header />
       <main className="sm:pb-8 sm:px-4">
         <section className="sm:pl-80 sm:py-14 sm:pr-72">
           <h1 className="text-4xl font-extralight leading-relaxed">
