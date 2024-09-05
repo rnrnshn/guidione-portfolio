@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 
@@ -7,11 +6,15 @@ export default function Home() {
     <div className="min-h-screen max-w-screen-2xl mx-auto flex flex-col">
       <Header />
       <main className="px-4 sm:px-4">
-        <section className="pt-8 pr-20 pb-8 sm:pl-80 sm:py-14 sm:pr-72">
-          <h1 className="text-xl sm:text-4xl font-extralight leading-relaxed">
-            Hello, I'm <span>Guidione</span>. <br />
-            I am <span>France</span> based Product Designer. <br />
-            I lead design at <span>23point5</span> previously at <span>Shopify</span>.
+        <section className="grid grid-cols-header-title p-20">
+          <h1
+            className="flex flex-col gap-2 header-title place-self-center col-start-2 col-end-3s text-xl sm:text-4x l font-serif text-[#888] leading-[52px]">
+            <span>Hello, I'm <span className="text-black">Guidione</span>. </span>
+            <span>I am <span className="text-black">France</span>
+              based Product Designer. </span>
+            <span>I lead design at {''}
+              <span className="text-black">23point5</span>
+              previously at <span className="text-black">Shopify</span>.</span>
           </h1>
         </section>
 

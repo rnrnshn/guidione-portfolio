@@ -2,10 +2,9 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="px-4 pt-16 pb-20 sm:px-48 sm:pb-16 sm:pt-24">
+    <footer className="px-4 p-12 sm:px-48 sm:pb-16 sm:pt-24">
       <div className="flex flex-col gap-2">
         <h3 className="sm:text-xl font-light">Get in touch</h3>
-
         <div className="flex flex-col gap-4 sm:flex-row justify-between">
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-8">
             <aside className="flex flex-col sm:gap-2">
@@ -28,7 +27,6 @@ export function Footer() {
               </Link>
             </aside>
           </div>
-
           <div className="flex gap-4 sm:gap-8">
             <Link
               href='https://drive.google.com/uc?export=download&id=1x-ly9V_TByeLn2BPBBep3852qxrNd2tr'
