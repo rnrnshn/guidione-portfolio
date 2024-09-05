@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="min-h-screen max-w-screen-2xl mx-auto flex flex-col">
       <Header />
-      <main className="px-4 sm:px-4">
+      <main className="px-4 sm:px-4 pb-8 sm:pb-16">
         <section className="sm:grid sm:grid-cols-header-title sm:p-20 pr-24 py-8">
           <h1
             className="flex flex-col sm:gap-2 header-title sm:place-self-center sm:col-start-2 sm:col-end-3 text-2xl sm:text-4xl font-serif text-[#888] sm:leading-[52px]">
