@@ -4,12 +4,14 @@ import GuidioneWide from '../../public/guidione-wide.jpg'
 import { Footer } from "../components/Footer";
 import { Accordion } from "../components/Accordion";
 import { AccordionItem } from "../components/AccordionItem";
+import { Breadcrumb } from "../components/Breadcrumb";
 
 export default function About() {
   return (
     <div className="max-w-[1880px] mx-auto">
       <Header />
       <main className="px-4 sm:px-4 sm:mb-20">
+        <Breadcrumb />
         <Image
           src={GuidioneWide}
           alt="Logo"
