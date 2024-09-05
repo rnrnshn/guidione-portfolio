@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply text-zinc-500;
+}
+
 .header-title {
   width: 42ch;
   
