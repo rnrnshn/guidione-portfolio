@@ -11,6 +11,10 @@ const config: Config = {
       aspectRatio: {
         'custom': '0.765101 / 1',
       },
+      fontFamily: {
+        sans: ['var(--font-inter_tight)'],
+        serif: ['var(--font-baskervville)'],
+      },
     },
   },
   plugins: [],

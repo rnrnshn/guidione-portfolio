@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter_Tight, Baskervville } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter_tight = Inter_Tight({
+  subsets: ["latin"],
+  variable: '--font-inter_tight',
+});
+const baskervville = Baskervville({
+  weight: "400",
+  subsets: ["latin"],
+  variable: '--font-baskervville',
+});
 
 export const metadata: Metadata = {
   title: "Guidione Machava",
@@ -15,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`${inter_tight.variable} ${baskervville.variable}`}>
+      <body className="font-sans">{children}</body>
     </html>
   );
 }
