@@ -62,7 +62,7 @@ export default function About() {
             </Accordion>
           </div>
 
-          <div className="flex gap-32">
+          <div className="hidden sm:flex gap-32">
             <aside>
               <h3 className="pb-4 mb-8 text-3xl font-serif italic text-zinc-600 border-b border-gray-200">Education</h3>
               <div className="mb-8 leading-relaxed">
@@ -113,6 +113,59 @@ export default function About() {
                 <p>Maputo, Mozambique</p>
               </div>
             </aside>
+          </div>
+
+          <div className="sm:hidden justify-center bg-gray-100 mb-8">
+            <Accordion>
+              { /* @ts-ignore */}
+              <AccordionItem title="Education">
+                <div className="text-sm mb-4 leading-relaxed">
+                  <h4 className="font-semibold">The Open Window Institute</h4>
+                  <p>Honors in Interaction Design</p>
+                  <p>2019 - 2021</p>
+                  <p>South Africa</p>
+                </div>
+
+                <div className="text-sm leading-relaxed">
+                  <h4 className="font-semibold">St. Thomas University</h4>
+                  <p>Bachelor's in Economicsn</p>
+                  <p>2012 - 2015 </p>
+                  <p>Mozambique</p>
+                </div>
+              </AccordionItem>
+              { /* @ts-ignore */}
+              <AccordionItem title="Volunteering">
+                <div className="text-sm mb-8 leading-relaxed">
+                  <h4 className="font-semibold">IxDA Global</h4>
+                  <p>Support Team Interaction 20</p>
+                  <p>Feb - 2020 Milan, Italy </p>
+                  <p>Milan, Italy</p>
+                </div>
+
+                <div className="text-sm leading-relaxed">
+                  <h4 className="font-semibold">TEDx Pretoria</h4>
+                  <p>Support Team </p>
+                  <p>Nov 2018</p>
+                  <p>Pretoria, South Africa</p>
+                </div>
+              </AccordionItem>
+              { /* @ts-ignore */}
+              <AccordionItem title="Personal projects">
+                <div className="text-smmb-8 leading-relaxed">
+                  <h4 className="font-semibold">World-class Designer</h4>
+                  <p>Online design school for early-stage designers.</p>
+                  <p>Feb - 2020, present </p>
+                  <p>Pretoria, South Africa</p>
+                </div>
+
+                <div className="text-sm leading-relaxed">
+                  <h4 className="font-semibold">Design Sutra (book)</h4>
+                  <p>Collection of 40 timeless design principles</p>
+                  <p>August - 2020</p>
+                  <p>Maputo, Mozambique</p>
+                </div>
+              </AccordionItem>
+            </Accordion>
           </div>
         </section>
 
