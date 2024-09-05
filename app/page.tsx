@@ -8,7 +8,7 @@ export default function Home() {
       <main className="px-4 sm:px-4">
         <section className="grid grid-cols-header-title p-20">
           <h1
-            className="flex flex-col gap-2 header-title place-self-center col-start-2 col-end-3s text-xl sm:text-4x l font-serif text-[#888] leading-[52px]">
+            className="flex flex-col gap-2 header-title place-self-center col-start-2 col-end-3s text-xl sm:text-4xl font-serif text-[#888] leading-[52px]">
             <span>Hello, I'm <span className="text-black">Guidione</span>. </span>
             <span>I am <span className="text-black">France</span>
               based Product Designer. </span>
