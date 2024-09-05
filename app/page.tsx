@@ -22,7 +22,7 @@ export default function Home() {
         <section className="">
           <div className="flex flex-col sm:grid sm:grid-cols-3 gap-4">
             <aside className="relative flex flex-col aspect-custom bg-slate-500 rounded-3xl">
-              <div className="absolute bottom-0 left-0 z-10 sm:p-4">
+              <div className="hidden sm:block absolute bottom-0 left-0 z-10 sm:p-4">
                 <h2 className="text-sm">
                   23point5
                 </h2>
@@ -42,7 +42,7 @@ export default function Home() {
             </aside>
 
             <aside className="relative flex flex-col aspect-custom bg-slate-500 rounded-3xl">
-              <div className="absolute bottom-0 left-0 z-10 sm:p-4">
+              <div className="hidden sm:block absolute bottom-0 left-0 z-10 sm:p-4">
                 <h2 className="text-sm">
                   Shopify Blockchain
                 </h2>
@@ -62,7 +62,7 @@ export default function Home() {
             </aside>
 
             <aside className="relative flex flex-col aspect-custom bg-slate-500 rounded-3xl">
-              <div className="absolute bottom-0 left-0 z-10 sm:p-4">
+              <div className="hidden sm:block absolute bottom-0 left-0 z-10 sm:p-4">
                 <h2 className="text-sm">
                   Shopify - NFT Sales Eligibility Application
                 </h2>
