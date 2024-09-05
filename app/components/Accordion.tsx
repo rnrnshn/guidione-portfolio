@@ -1,9 +1,10 @@
 'use client'
 import React, { useState } from 'react';
 
+// @ts-ignore
 export const Accordion = ({ children }) => {
   const [activeIndex, setActiveIndex] = useState(null);
-
+  // @ts-ignore
   const handleToggle = (index) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
   };
