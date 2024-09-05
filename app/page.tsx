@@ -6,15 +6,16 @@ export default function Home() {
     <div className="min-h-screen max-w-screen-2xl mx-auto flex flex-col">
       <Header />
       <main className="px-4 sm:px-4">
-        <section className="grid grid-cols-header-title p-20">
+        <section className="sm:grid sm:grid-cols-header-title sm:p-20 pr-24 py-8">
           <h1
-            className="flex flex-col gap-2 header-title place-self-center col-start-2 col-end-3s text-xl sm:text-4xl font-serif text-[#888] leading-[52px]">
+            className="flex flex-col sm:gap-2 header-title sm:place-self-center sm:col-start-2 sm:col-end-3 text-2xl sm:text-4xl font-serif text-[#888] sm:leading-[52px]">
             <span>Hello, I'm <span className="text-black">Guidione</span>. </span>
-            <span>I am <span className="text-black">France</span>
+            <span>I am <span className="text-black"> France </span>
               based Product Designer. </span>
-            <span>I lead design at {''}
-              <span className="text-black">23point5</span>
-              previously at <span className="text-black">Shopify</span>.</span>
+            <span>
+              I lead design at <span className="text-black italic"> 23point5 </span>
+              previously at <span className="text-black italic">Shopify</span>.
+            </span>
           </h1>
         </section>
 
