@@ -15,6 +15,9 @@ const config: Config = {
         sans: ['var(--font-inter_tight)'],
         serif: ['var(--font-baskervville)'],
       },
+      gridTemplateColumns: {
+        'header-title': '12% 1fr 12%',
+      }
     },
   },
   plugins: [],
