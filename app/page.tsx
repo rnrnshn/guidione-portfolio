@@ -1,7 +1,11 @@
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
+import { getProjects } from "./utils/contentful";
+import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
+  const projects = await getProjects();
+
   return (
     <div className="min-h-screen max-w-screen-2xl mx-auto flex flex-col">
       <Header />
@@ -21,65 +25,36 @@ export default function Home() {
 
         <section className="">
           <div className="flex flex-col sm:grid sm:grid-cols-3 gap-4">
-            <aside className="relative flex flex-col aspect-custom bg-slate-500 rounded-3xl">
-              <div className="hidden sm:block absolute bottom-0 left-0 z-10 sm:p-4">
-                <h2 className="text-sm">
-                  23point5
-                </h2>
-                <h3 className="text-sm">
-                  An innovative apparel technology and manufacturing platform
-                </h3>
-              </div>
-              <video
-                preload="auto"
-                loop
-                autoPlay
-                className="absolute inset-0 w-full h-full object-cover object-center rounded-3xl"
-              >
-                <source src="/23point5-video.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </aside>
 
-            <aside className="relative flex flex-col aspect-custom bg-slate-500 rounded-3xl">
-              <div className="hidden sm:block absolute bottom-0 left-0 z-10 sm:p-4">
-                <h2 className="text-sm">
-                  Shopify Blockchain
-                </h2>
-                <h3 className="text-sm">
-                  Building for blockchain/token-powered commerce
-                </h3>
-              </div>
-              <video
-                preload="auto"
-                loop
-                autoPlay
-                className="absolute inset-0 w-full h-full object-cover object-center rounded-3xl"
-              >
-                <source src="/23point5-video.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </aside>
+            {projects.map((project) => {
+              const videoUrl = project.projectVideoCover?.fields?.file?.url; // Fetch URL from linked asset
 
-            <aside className="relative flex flex-col aspect-custom bg-slate-500 rounded-3xl">
-              <div className="hidden sm:block absolute bottom-0 left-0 z-10 sm:p-4">
-                <h2 className="text-sm">
-                  Shopify - NFT Sales Eligibility Application
-                </h2>
-                <h3 className="text-sm">
-                  An application helps merchants in selling, gifting, and minting NFTs.
-                </h3>
-              </div>
-              <video
-                preload="auto"
-                loop
-                autoPlay
-                className="absolute inset-0 w-full h-full object-cover object-center rounded-3xl"
-              >
-                <source src="/23point5-video.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </aside>
+              return (
+                <div key={project.projectSlug}>
+                  <Link href={`${project.projectSlug}`}>
+                    <aside className="relative flex flex-col aspect-custom bg-slate-500 rounded-3xl">
+                      <div className="hidden sm:block absolute bottom-0 left-0 z-10 sm:p-4">
+                        <h2 className="text-sm">{project.projectTitle}</h2>
+                        <h3 className="text-sm">{project.projectDescription}</h3>
+                      </div>
+                      {videoUrl && (
+                        <video
+                          preload="auto"
+                          loop
+                          autoPlay
+                          muted
+                          className="absolute inset-0 w-full h-full object-cover object-center rounded-3xl"
+                        >
+                          <source src={videoUrl} type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                      )}
+                    </aside>
+                  </Link>
+                </div>
+              );
+            })}
+
           </div>
         </section>
       </main>
