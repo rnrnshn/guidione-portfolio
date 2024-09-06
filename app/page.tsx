@@ -11,29 +11,26 @@ export default async function Home() {
       <Header />
       <main className="px-4 sm:px-4 pb-8 sm:pb-16">
         <section className="sm:grid sm:grid-cols-header-title sm:p-20 pr-24 py-8">
-          <h1
-            className="flex flex-col sm:gap-2 header-title sm:place-self-center sm:col-start-2 sm:col-end-3 text-2xl sm:text-4xl font-serif text-[#888] sm:leading-[52px]">
+          <h1 className="flex flex-col sm:gap-2 header-title sm:place-self-center sm:col-start-2 sm:col-end-3 text-2xl sm:text-4xl font-serif text-[#888] sm:leading-[52px]">
             <span>Hello, I'm <span className="text-black">Guidione</span>. </span>
-            <span>I am <span className="text-black"> France </span>
-              based Product Designer. </span>
+            <span>I am <span className="text-black">France</span> based Product Designer. </span>
             <span>
-              I lead design at <span className="text-black italic"> 23point5 </span>
-              previously at <span className="text-black italic">Shopify</span>.
+              I lead design at <span className="text-black italic">23point5</span>, previously at <span className="text-black italic">Shopify</span>.
             </span>
           </h1>
         </section>
 
-        <section className="">
+        <section>
           <div className="flex flex-col sm:grid sm:grid-cols-3 gap-4">
-
             {projects.map((project) => {
               // @ts-ignore
-              const videoUrl = project.projectVideoCover?.fields?.file?.url;
+              const videoUrl = project?.projectVideoCover?.fields?.file?.url;
+              const projectSlug = project?.projectSlug ?? "#";
 
               return (
                 // @ts-ignore
-                <div key={project.projectSlug}>
-                  <Link href={`${project.projectSlug}`}>
+                <div key={projectSlug}>
+                  <Link href={`/${projectSlug}`}>
                     <aside className="relative flex flex-col aspect-custom bg-slate-500 rounded-3xl">
                       <div className="hidden sm:block absolute bottom-0 left-0 z-10 sm:p-4">
                         {/* @ts-ignore */}
@@ -41,7 +38,7 @@ export default async function Home() {
                         {/* @ts-ignore */}
                         <h3 className="text-sm">{project.projectDescription}</h3>
                       </div>
-                      {videoUrl && (
+                      {videoUrl ? (
                         <video
                           preload="auto"
                           loop
@@ -52,17 +49,25 @@ export default async function Home() {
                           <source src={videoUrl} type="video/mp4" />
                           Your browser does not support the video tag.
                         </video>
+                      ) : (
+                        <img
+                          src="/default-cover.jpg"
+                          alt="Default cover"
+                          className="absolute inset-0 w-full h-full object-cover object-center rounded-3xl"
+                        />
                       )}
                     </aside>
                   </Link>
                 </div>
               );
             })}
-
           </div>
         </section>
       </main>
       <Footer />
-    </div >
+    </div>
   );
 }
+
+// Revalidate the page every 10 seconds (ISR)
+export const revalidate = 10;
