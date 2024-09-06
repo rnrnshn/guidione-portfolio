@@ -95,6 +95,7 @@ export default async function ProjectPage(props) {
                           className="your-custom-class"
                         />}
                       {contentItem.fields.sideToSideImageCover &&
+                        // @ts-ignore
                         contentItem.fields.sideToSideImageCover.map((image, idx) => (
                           <img
                             key={idx}
