@@ -19,7 +19,6 @@ export const getEntriesByType = async (type) => {
 
 export const getProjects = async () => {
   const results = await getEntriesByType('Projects')
-  console.log(results)
   const projects = results.map((project) => project.fields)
   return projects
 }
