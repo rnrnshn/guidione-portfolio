@@ -27,14 +27,18 @@ export default async function Home() {
           <div className="flex flex-col sm:grid sm:grid-cols-3 gap-4">
 
             {projects.map((project) => {
-              const videoUrl = project.projectVideoCover?.fields?.file?.url; // Fetch URL from linked asset
+              // @ts-ignore
+              const videoUrl = project.projectVideoCover?.fields?.file?.url;
 
               return (
+                // @ts-ignore
                 <div key={project.projectSlug}>
                   <Link href={`${project.projectSlug}`}>
                     <aside className="relative flex flex-col aspect-custom bg-slate-500 rounded-3xl">
                       <div className="hidden sm:block absolute bottom-0 left-0 z-10 sm:p-4">
+                        {/* @ts-ignore */}
                         <h2 className="text-sm">{project.projectTitle}</h2>
+                        {/* @ts-ignore */}
                         <h3 className="text-sm">{project.projectDescription}</h3>
                       </div>
                       {videoUrl && (
