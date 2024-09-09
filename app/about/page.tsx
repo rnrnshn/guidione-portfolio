@@ -5,6 +5,7 @@ import { Footer } from "../components/Footer";
 import { Accordion } from "../components/Accordion";
 import { AccordionItem } from "../components/AccordionItem";
 import { Breadcrumb } from "../components/Breadcrumb";
+import experienceData from "../utils/jobs.json";
 
 export default function About() {
   return (
@@ -25,42 +26,28 @@ export default function About() {
 
           <div className="justify-center bg-gray-100 mb-16">
             <Accordion>
-              { /* @ts-ignore */}
-              <AccordionItem title="23point5" subTitle="Lead Product Designer">
-                <p>
-                  Content for section 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-              </AccordionItem>
-              { /* @ts-ignore */}
-              <AccordionItem title="Shopify, blockchain" subTitle="Senior Product Designer">
-                <p>
-                  Content for section 2. Nulla accumsan, metus ultrices eleifend gravida.
-                </p>
-              </AccordionItem>
-              { /* @ts-ignore */}
-              <AccordionItem title="Gomarket (Acquired)" subTitle="Funder and Lead Designer">
-                <p>
-                  Content for section 3. Maecenas non laoreet dui. Curabitur ac libero nec nulla facilisis.
-                </p>
-              </AccordionItem>
-              { /* @ts-ignore */}
-              <AccordionItem title="Lepsta Inc" subTitle="Product Manager">
-                <p>
-                  Content for section 3. Maecenas non laoreet dui. Curabitur ac libero nec nulla facilisis.
-                </p>
-              </AccordionItem>
-              { /* @ts-ignore */}
-              <AccordionItem title="" subTitle="UX/UI -Product Designer">
-                <p>
-                  Content for section 3. Maecenas non laoreet dui. Curabitur ac libero nec nulla facilisis.
-                </p>
-              </AccordionItem>
-              { /* @ts-ignore */}
-              <AccordionItem title="The World Bank" subTitle="Product Manager ">
-                <p>
-                  Content for section 3. Maecenas non laoreet dui. Curabitur ac libero nec nulla facilisis.
-                </p>
-              </AccordionItem>
+              {experienceData.experience.map((job) => (
+                // @ts-ignore
+                <AccordionItem
+                  key={job.id}
+                  title={job.company_name}
+                  subTitle={job.job_title}
+                >
+                  <div>
+                    <h3>
+                      {new Date(job.start_date).toLocaleDateString("en-US", { year: 'numeric', month: 'long' })} - {''}
+                      {job.end_date ? new Date(job.end_date).toLocaleDateString("en-US", { year: 'numeric', month: 'long' }) : "Present"}, {''}
+                      {job.location}
+                    </h3>
+                    <p>{job.description}</p>
+                    <ul className="list-disc ml-6">
+                      {job.responsibilities.map((responsibility, index) => (
+                        <li key={index}>{responsibility}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </AccordionItem>
+              ))}
             </Accordion>
           </div>
 

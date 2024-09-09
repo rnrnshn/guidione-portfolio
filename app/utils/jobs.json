@@ -1,0 +1,99 @@
+{
+  "experience": [
+    {
+      "id": "1",
+      "job_title": "Lead Product Designer",
+      "company_name": "23point5",
+      "start_date": "2023-05-01",
+      "end_date": null,
+      "location": "Montpellier, France",
+      "description": "Led product design and managed a cross-functional team to deliver high-quality products.",
+      "responsibilities": [
+        "Recruited key team members including designers, a marketing lead, and an engineering lead.",
+        "Led a team of engineers, designers, and a marketer across multiple countries.",
+        "Oversaw UI, interaction, and visual design from concept to launch.",
+        "Conducted user research to inform design iterations.",
+        "Created a comprehensive design system and interaction patterns.",
+        "Produced high-fidelity prototypes for stakeholder visualization.",
+        "Directed design reviews and collaborated with engineers."
+      ]
+    },
+    {
+      "id": "2",
+      "job_title": "Senior Product Designer",
+      "company_name": "Shopify, Blockchain",
+      "start_date": "2022-05-01",
+      "end_date": "2023-05-01",
+      "location": "Montpellier, France",
+      "description": "Led design efforts for blockchain-related solutions at Shopify, enhancing merchant capabilities with NFTs.",
+      "responsibilities": [
+        "Designed and implemented a solution to assist merchants in selling and distributing NFTs online.",
+        "Created a sample app to guide third-party developers in building native blockchain apps on Shopify.",
+        "Collaborated with product researchers to understand and advocate for merchant needs.",
+        "Won the best design token airdropping app in an internal hackathon.",
+        "Represented Shopify at international design and crypto conferences.",
+        "Led UX initiatives including design sprints, wireframing, and prototyping.",
+        "Facilitated stakeholder reviews with low and high-fidelity prototypes.",
+        "Worked closely with engineers and product managers to deliver high-quality designs."
+      ]
+    },
+    {
+      "id": "3",
+      "job_title": "Founder and Lead Designer",
+      "company_name": "Gomarket (Acquired)",
+      "start_date": "2018-06-01",
+      "end_date": "2021-06-01",
+      "location": "Pretoria, South Africa",
+      "description": "Founded Gomarket, built a platform from scratch, and led a team to significant market penetration and acquisition.",
+      "responsibilities": [
+        "Built a platform to accommodate and register over 300,000 companies, driving user growth.",
+        "Managed a team of designers and developers, driving collaboration and achieving project milestones.",
+        "Led the entire product design cycle, ensuring the platform's functionality, usability, and visual appeal."
+      ]
+    },
+    {
+      "id": "4",
+      "job_title": "Product Manager",
+      "company_name": "Lepsta Inc",
+      "start_date": "2020-06-01",
+      "end_date": "2022-03-01",
+      "location": "Remote",
+      "description": "Managed product development and a remote team to deliver a code synchronization tool tailored for developers.",
+      "responsibilities": [
+        "Supervised a diverse, remote team of developers and designers.",
+        "Collaborated across locations to deliver a top-tier code synchronization tool.",
+        "Tailored the product specifically for developers' needs.",
+        "Oversaw comprehensive product implementation.",
+        "Crafted an innovative go-to-market strategy from scratch."
+      ]
+    },
+    {
+      "id": "5",
+      "job_title": "UX/UI - Product Designer",
+      "company_name": "Lepsta Inc",
+      "start_date": "2017-06-01",
+      "end_date": "2020-06-01",
+      "location": "Remote",
+      "description": "Conducted extensive market research and competitive analysis, identifying key opportunities and differentiators to position Lepsta as a unique and valuable tool for developers.",
+      "responsibilities": [
+        "Developed wireframes, prototypes, and mock-ups to effectively communicate design concepts and facilitate early-stage testing and feedback.",
+        "Organized and conducted focused group sessions with early access users, gathering valuable feedback to drive product improvements.",
+        "Designed high-fidelity user interfaces (UI)."
+      ]
+    },
+    {
+      "id": "6",
+      "job_title": "Product Manager",
+      "company_name": "The World Bank",
+      "start_date": "2014-06-01",
+      "end_date": "2017-05-01",
+      "location": "Maputo, Mozambique",
+      "description": "Collaborated with the World Bank and the Maputo Municipality to create the country's first inclusive smart city platform, facilitating effective waste management solutions.",
+      "responsibilities": [
+        "Recognized as a case study for the UNESCO-Pearson Initiative for Literacy, highlighting the effectiveness and impact of the MOPA platform.",
+        "Worked closely with the engineering team to translate user requirements into actionable product specifications, ensuring a smooth development process.",
+        "Provided product demonstrations and training sessions to internal teams and external stakeholders, effectively communicating the product's value proposition and features."
+      ]
+    }
+  ]
+}
