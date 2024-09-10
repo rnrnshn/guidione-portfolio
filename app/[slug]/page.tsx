@@ -79,10 +79,8 @@ export default async function ProjectPage(props) {
                       key={index}
                       title={contentItem.fields.projectContentItemTitle}
                     >
-
-
+                      {/* Normal Cver */}
                       <div className="">
-                        {/* Render various asset covers */}
                         {contentItem.fields.normalCover &&
                           <img
                             src={`https:${contentItem.fields.normalCover.fields.file.url}`}
@@ -91,15 +89,18 @@ export default async function ProjectPage(props) {
                           />}
                       </div>
 
-                      {contentItem.fields.wideCover &&
-                        <img
-                          src={`https:${contentItem.fields.wideCover.fields.file.url}`}
-                          alt="Wide Cover"
-                          className="your-custom-class"
-                        />
-                      }
+                      {/* Wide Cover */}
+                      <div className="relative w-full sm:grid grid-cols-2 gap-4">
+                        {contentItem.fields.wideCover &&
+                          <img
+                            src={`https:${contentItem.fields.wideCover.fields.file.url}`}
+                            alt="Wide Cover"
+                            className="col-span-2 rounded-3xl w-full h-full max-w-full"
+                          />
+                        }
+                      </div>
 
-
+                      {/* Side to side Image Cover */}
                       <div className="relative w-full sm:grid grid-cols-2 gap-4">
                         {contentItem.fields.sideToSideImageCover &&
                           // @ts-ignore
@@ -114,14 +115,18 @@ export default async function ProjectPage(props) {
                       </div>
 
 
-                      {contentItem.fields.normalVideoCover &&
-                        <img
-                          src={`https:${contentItem.fields.normalVideoCover.fields.file.url}`}
-                          alt="Normal Video Cover"
-                          className="your-custom-class"
-                        />}
+                      {/* Normal Video Cover */}
+                      <div>
+                        {contentItem.fields.normalVideoCover &&
+                          <img
+                            src={`https:${contentItem.fields.normalVideoCover.fields.file.url}`}
+                            alt="Normal Video Cover"
+                            className="your-custom-class"
+                          />
+                        }
+                      </div>
 
-                      {/* Render rich text content */}
+                      {/* Rich text content */}
                       <div className="mb-4">
                         {contentItem.fields.richContent &&
                           documentToReactComponents(contentItem.fields.richContent)}
