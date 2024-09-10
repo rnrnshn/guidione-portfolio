@@ -1,9 +1,21 @@
 'use client'
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 // @ts-ignore
 export const AccordionProjectItem = ({ title, children, isActive, onToggle }) => {
+  const contentRef = useRef(null); // Reference to the content to calculate height
+  const [maxHeight, setMaxHeight] = useState("0px");
+
+  // Update the maxHeight when isActive changes
+  useEffect(() => {
+    if (isActive) {
+      setMaxHeight(`${contentRef.current.scrollHeight}px`);
+    } else {
+      setMaxHeight("0px");
+    }
+  }, [isActive]);
+
   return (
     <div className="flex flex-col">
       <button
@@ -22,18 +34,24 @@ export const AccordionProjectItem = ({ title, children, isActive, onToggle }) =>
           )}
         </div>
       </button>
-      {isActive && (
-        <div
-          id={`accordion-content-${title}`}
-          role="region"
-          aria-labelledby={`accordion-header-${title}`}
-          className="w-full sm:p-4 pb-4 text-gray-500 transition-all duration-300 ease-in-out"
-        >
-          <div className='w-full bg-red-300 sm:flex flex-col'>
-            {children}
-          </div>
+
+      <div
+        id={`accordion-content-${title}`}
+        ref={contentRef}
+        role="region"
+        aria-labelledby={`accordion-header-${title}`}
+        style={{
+          maxHeight: maxHeight,
+          overflow: 'hidden',
+          transition: 'max-height 0.3s ease, opacity 0.3s ease',
+          opacity: isActive ? 1 : 0,
+        }}
+        className="w-full text-gray-500"
+      >
+        <div className="sm:p-4 pb-4 w-full bg-red-300 sm:flex flex-col">
+          {children}
         </div>
-      )}
+      </div>
     </div>
   );
 };
