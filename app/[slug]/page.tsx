@@ -114,16 +114,26 @@ export default async function ProjectPage(props) {
                           ))}
                       </div>
 
-
                       {/* Normal Video Cover */}
-                      <div>
-                        {contentItem.fields.normalVideoCover &&
-                          <img
-                            src={`https:${contentItem.fields.normalVideoCover.fields.file.url}`}
-                            alt="Normal Video Cover"
-                            className="your-custom-class"
-                          />
-                        }
+                      <div className="relative w-full sm:grid grid-cols-2 gap-4 mb-4">
+                        <div className="col-span-full overflow-hidden aspect-video relative rounded-3xl">
+                          {contentItem.fields.normalVideoCover && (
+                            <video
+                              preload="auto"
+                              loop
+                              autoPlay
+                              muted
+                              playsInline
+                              className="absolute top-0 left-0 w-full h-full object-cover rounded-3xl"
+                            >
+                              <source
+                                src={`https:${contentItem.fields.normalVideoCover.fields.file.url}`}
+                                type="video/mp4"
+                              />
+                              Your browser does not support the video tag.
+                            </video>
+                          )}
+                        </div>
                       </div>
 
                       {/* Rich text content */}
