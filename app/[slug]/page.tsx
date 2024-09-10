@@ -61,12 +61,14 @@ export default async function ProjectPage(props) {
           </div>
         )}
 
-        <section className="sm:grid sm:grid-cols-header-title">
-          <div className="col-start-2">
-            <h1
-              className="flex flex-col sm:gap-2 sm:place-self-center text-2xl sm:text-2xl font-serif italic text-zinc-600 sm:leading-[52px]">
-              Project context
-            </h1>
+        <section className="">
+          <div className="">
+            <div className="max-w-6xl mx-auto">
+              <h1
+                className="text-2xl sm:text-2xl font-serif italic text-zinc-600 sm:leading-[52px]">
+                Project context
+              </h1>
+            </div>
             <div className="justify-center bg-gray-100 mb-16">
               <Accordion>
                 {/* @ts-ignore */}
@@ -77,39 +79,53 @@ export default async function ProjectPage(props) {
                       key={index}
                       title={contentItem.fields.projectContentItemTitle}
                     >
-                      {/* Render rich text content */}
-                      {contentItem.fields.richContent &&
-                        documentToReactComponents(contentItem.fields.richContent)}
 
-                      {/* Render various asset covers */}
-                      {contentItem.fields.normalCover &&
-                        <img
-                          src={`https:${contentItem.fields.normalCover.fields.file.url}`}
-                          alt="Normal Cover"
-                          className="your-custom-class"
-                        />}
+
+                      <div className="">
+                        {/* Render various asset covers */}
+                        {contentItem.fields.normalCover &&
+                          <img
+                            src={`https:${contentItem.fields.normalCover.fields.file.url}`}
+                            alt="Normal Cover"
+                            className="your-custom-class"
+                          />}
+                      </div>
+
                       {contentItem.fields.wideCover &&
                         <img
                           src={`https:${contentItem.fields.wideCover.fields.file.url}`}
                           alt="Wide Cover"
                           className="your-custom-class"
-                        />}
-                      {contentItem.fields.sideToSideImageCover &&
-                        // @ts-ignore
-                        contentItem.fields.sideToSideImageCover.map((image, idx) => (
-                          <img
-                            key={idx}
-                            src={`https:${image.fields.file.url}`}
-                            alt={`Side-to-Side Cover ${idx + 1}`}
-                            className="your-custom-class"
-                          />
-                        ))}
+                        />
+                      }
+
+
+                      <div className="relative w-full sm:grid grid-cols-2 gap-4">
+                        {contentItem.fields.sideToSideImageCover &&
+                          // @ts-ignore
+                          contentItem.fields.sideToSideImageCover.map((image, idx) => (
+                            <img
+                              key={idx}
+                              src={`https:${image.fields.file.url}`}
+                              alt={`Side-to-Side Cover ${idx + 1}`}
+                              className="rounded-3xl w-full h-full max-w-full"
+                            />
+                          ))}
+                      </div>
+
+
                       {contentItem.fields.normalVideoCover &&
                         <img
                           src={`https:${contentItem.fields.normalVideoCover.fields.file.url}`}
                           alt="Normal Video Cover"
                           className="your-custom-class"
                         />}
+
+                      {/* Render rich text content */}
+                      <div className="mb-4">
+                        {contentItem.fields.richContent &&
+                          documentToReactComponents(contentItem.fields.richContent)}
+                      </div>
                     </AccordionProjectItem>
                   ))}
               </Accordion>
