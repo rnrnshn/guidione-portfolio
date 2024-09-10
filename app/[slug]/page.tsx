@@ -72,77 +72,78 @@ export default async function ProjectPage(props) {
             <div className="justify-center bg-gray-100 mb-16">
               <Accordion>
                 {/* @ts-ignore */}
-                { // @ts-ignore
-                  projectContents.map((contentItem, index) => (
-                    // @ts-ignore
-                    <AccordionProjectItem
-                      key={index}
-                      title={contentItem.fields.projectContentItemTitle}
-                    >
-                      {/* Normal Cver */}
+                {projectContents?.map((contentItem, index) => (
+                  // @ts-ignore
+                  <AccordionProjectItem
+                    key={index}
+                    title={contentItem.fields.projectContentItemTitle}
+                  >
+                    {/* Render Normal Cover */}
+                    {contentItem.fields.normalCover && (
                       <div className="">
-                        {contentItem.fields.normalCover &&
-                          <img
-                            src={`https:${contentItem.fields.normalCover.fields.file.url}`}
-                            alt="Normal Cover"
-                            className="your-custom-class"
-                          />}
+                        <img
+                          src={`https:${contentItem.fields.normalCover.fields.file.url}`}
+                          alt="Normal Cover"
+                          className="your-custom-class"
+                        />
                       </div>
+                    )}
 
-                      {/* Wide Cover */}
+                    {/* Render Wide Cover */}
+                    {contentItem.fields.wideCover && (
                       <div className="relative w-full sm:grid grid-cols-2 gap-4">
-                        {contentItem.fields.wideCover &&
+                        <img
+                          src={`https:${contentItem.fields.wideCover.fields.file.url}`}
+                          alt="Wide Cover"
+                          className="col-span-2 rounded-3xl w-full h-full max-w-full"
+                        />
+                      </div>
+                    )}
+
+                    {/* Render Side-to-Side Image Cover */}
+                    {contentItem.fields.sideToSideImageCover && (
+                      <div className="relative w-full sm:grid grid-cols-2 gap-4">
+                        {contentItem.fields.sideToSideImageCover.map((image, idx) => (
                           <img
-                            src={`https:${contentItem.fields.wideCover.fields.file.url}`}
-                            alt="Wide Cover"
-                            className="col-span-2 rounded-3xl w-full h-full max-w-full"
+                            key={idx}
+                            src={`https:${image.fields.file.url}`}
+                            alt={`Side-to-Side Cover ${idx + 1}`}
+                            className="rounded-3xl w-full h-full max-w-full"
                           />
-                        }
+                        ))}
                       </div>
+                    )}
 
-                      {/* Side to side Image Cover */}
-                      <div className="relative w-full sm:grid grid-cols-2 gap-4">
-                        {contentItem.fields.sideToSideImageCover &&
-                          // @ts-ignore
-                          contentItem.fields.sideToSideImageCover.map((image, idx) => (
-                            <img
-                              key={idx}
-                              src={`https:${image.fields.file.url}`}
-                              alt={`Side-to-Side Cover ${idx + 1}`}
-                              className="rounded-3xl w-full h-full max-w-full"
-                            />
-                          ))}
-                      </div>
-
-                      {/* Normal Video Cover */}
+                    {/* Render Normal Video Cover Only if Available */}
+                    {contentItem.fields.normalVideoCover && (
                       <div className="relative w-full sm:grid grid-cols-2 gap-4 mb-4">
                         <div className="col-span-full overflow-hidden aspect-video relative rounded-3xl">
-                          {contentItem.fields.normalVideoCover && (
-                            <video
-                              preload="auto"
-                              loop
-                              autoPlay
-                              muted
-                              playsInline
-                              className="absolute top-0 left-0 w-full h-full object-cover rounded-3xl"
-                            >
-                              <source
-                                src={`https:${contentItem.fields.normalVideoCover.fields.file.url}`}
-                                type="video/mp4"
-                              />
-                              Your browser does not support the video tag.
-                            </video>
-                          )}
+                          <video
+                            preload="auto"
+                            loop
+                            autoPlay
+                            muted
+                            playsInline
+                            className="absolute top-0 left-0 w-full h-full object-cover rounded-3xl"
+                          >
+                            <source
+                              src={`https:${contentItem.fields.normalVideoCover.fields.file.url}`}
+                              type="video/mp4"
+                            />
+                            Your browser does not support the video tag.
+                          </video>
                         </div>
                       </div>
+                    )}
 
-                      {/* Rich text content */}
+                    {/* Render Rich Text Content */}
+                    {contentItem.fields.richContent && (
                       <div className="mb-4">
-                        {contentItem.fields.richContent &&
-                          documentToReactComponents(contentItem.fields.richContent)}
+                        {documentToReactComponents(contentItem.fields.richContent)}
                       </div>
-                    </AccordionProjectItem>
-                  ))}
+                    )}
+                  </AccordionProjectItem>
+                ))}
               </Accordion>
             </div>
           </div>
