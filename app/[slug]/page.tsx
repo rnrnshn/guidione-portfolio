@@ -103,6 +103,7 @@ export default async function ProjectPage(props) {
                     {/* Render Side-to-Side Image Cover */}
                     {contentItem.fields.sideToSideImageCover && (
                       <div className="relative w-full sm:grid grid-cols-2 gap-4">
+                        {/* @ts-ignore */}
                         {contentItem.fields.sideToSideImageCover.map((image, idx) => (
                           <img
                             key={idx}

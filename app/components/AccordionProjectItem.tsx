@@ -10,6 +10,7 @@ export const AccordionProjectItem = ({ title, children, isActive, onToggle }) =>
   // Update the maxHeight when isActive changes
   useEffect(() => {
     if (isActive) {
+      // @ts-ignore
       setMaxHeight(`${contentRef.current.scrollHeight}px`);
     } else {
       setMaxHeight("0px");
@@ -48,7 +49,7 @@ export const AccordionProjectItem = ({ title, children, isActive, onToggle }) =>
         }}
         className="w-full text-gray-500"
       >
-        <div className="sm:p-4 pb-4 w-full bg-red-300 sm:flex flex-col">
+        <div className="sm:p-4 pb-4 w-full sm:flex flex-col">
           {children}
         </div>
       </div>
