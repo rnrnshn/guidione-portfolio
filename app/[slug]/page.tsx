@@ -63,9 +63,9 @@ export default async function ProjectPage(props) {
 
         <section className="">
           <div className="">
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-5xl sm:ml-40 bg-red-300">
               <h1
-                className="text-2xl sm:text-2xl font-serif italic text-zinc-600 sm:leading-[52px]">
+                className="text-2xl sm:text-3xl font-serif italic text-zinc-600 sm:leading-[52px]">
                 Project context
               </h1>
             </div>
@@ -139,8 +139,10 @@ export default async function ProjectPage(props) {
 
                     {/* Render Rich Text Content */}
                     {contentItem.fields.richContent && (
-                      <div className="mb-4">
-                        {documentToReactComponents(contentItem.fields.richContent)}
+                      <div className="max-w-5xl sm:ml-40 mb-4 grid grid-cols-rich-content">
+                        <div className="col-span-full sm:col-start-2">
+                          {documentToReactComponents(contentItem.fields.richContent)}
+                        </div>
                       </div>
                     )}
                   </AccordionProjectItem>
