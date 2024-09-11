@@ -7,6 +7,7 @@ import { Accordion } from "../components/Accordion";
 import { AccordionProjectItem } from "../components/AccordionProjectItem";
 import { Breadcrumb } from "../components/Breadcrumb";
 import Image from "next/image";
+import { WideCover } from "../components/WideCover";
 
 const client = createContentClient();
 
@@ -145,14 +146,27 @@ export default async function ProjectPage(props) {
                     )}
 
                     {/* Render Wide Cover */}
-                    {contentItem.fields.wideCover && (
-                      <div className="relative w-full sm:grid grid-cols-2 gap-4 m-4">
-                        <img
-                          src={`https:${contentItem.fields.wideCover.fields.file.url}`}
-                          alt="Wide Cover"
-                          className="col-span-2 rounded-3xl w-full h-full max-w-full"
-                        />
+                    {/* {contentItem.fields.wideCover && (
+                      <div className="relative w-full sm:grid grid-cols-2 gap-4 mb-4">
+                        <div className="image-section aspect-image-section col-span-2 h-[600px] w-full bg-red-300 relative overflow-x-scroll overflow-y-hidden">
+                          <div className="image-container aspect-image-container h-[600px] overflow-auto absolute left-0 top-0 w-[400%] bg-blue-400">
+                            <div className="image_wrapper absolute inset-0">
+                              <img
+                                src={`https:${contentItem.fields.wideCover.fields.file.url}`}
+                                alt="Wide Cover"
+                                className="large-image block rounded-3xl w-full h-full object-left-top object-contain"
+                              />
+                            </div>
+                          </div>
+                        </div>
                       </div>
+                    )} */}
+
+                    {contentItem.fields.wideCover && (
+                      <WideCover
+                        imageUrl={`https:${contentItem.fields.wideCover.fields.file.url}`}
+                        altText="Wide Cover"
+                      />
                     )}
 
                     {/* Render Side-to-Side Image Cover */}
