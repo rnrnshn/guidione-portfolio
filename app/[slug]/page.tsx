@@ -63,7 +63,7 @@ export default async function ProjectPage(props) {
 
         <section className="">
           <div className="">
-            <div className="max-w-5xl sm:ml-40 bg-red-300">
+            <div className="max-w-5xl sm:ml-40">
               <h1
                 className="text-2xl sm:text-3xl font-serif italic text-zinc-600 sm:leading-[52px]">
                 Project context
