@@ -20,7 +20,7 @@ export const AccordionProjectItem = ({ title, children, isActive, onToggle }) =>
   return (
     <div className="flex flex-col">
       <button
-        className="max-w-6xl mx-auto flex justify-between items-center w-full sm:p-4 py-4 text-left focus:outline-none border-b border-gray-200"
+        className="max-w-5xl sm:ml-40 flex justify-between items-center w-full sm:p-4 py-4 text-left focus:outline-none border-b border-gray-200"
         onClick={onToggle}
         aria-expanded={isActive}
         aria-controls={`accordion-content-${title}`}
