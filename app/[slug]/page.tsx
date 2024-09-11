@@ -27,15 +27,19 @@ export async function generateStaticParams() {
 
 const renderOptions = {
   renderNode: {
+    // @ts-ignore
     [BLOCKS.PARAGRAPH]: (node, children) => {
       return <p className="text-base font-light mb-2">{children}</p>;
     },
+    // @ts-ignore
     [BLOCKS.HEADING_1]: (node, children) => {
       return <h1 className="text-base mb-3">{children}</h1>;
     },
+    // @ts-ignore
     [BLOCKS.HEADING_2]: (node, children) => {
       return <h2 className="text-base mb-3">{children}</h2>;
     },
+    // @ts-ignore
     [BLOCKS.UL_LIST]: (node, children) => {
       return (
         <ul className="list-disc list-outside pl-5 sm:pl-10 mb-2">
@@ -43,6 +47,7 @@ const renderOptions = {
         </ul>
       );
     },
+    // @ts-ignore
     [BLOCKS.OL_LIST]: (node, children) => {
       return (
         <ol className="list-decimal list-outside pl-5 sm:pl-10 mb-2">
@@ -50,9 +55,11 @@ const renderOptions = {
         </ol>
       );
     },
+    // @ts-ignore
     [BLOCKS.LIST_ITEM]: (node, children) => {
       return <li className="mb-1">{children}</li>;
     },
+    // @ts-ignore
     [BLOCKS.QUOTE]: (node, children) => {
       return (
         <blockquote className="border-l-4 border-gray-400 pl-4 italic text-gray-700 mb-4">
@@ -60,6 +67,7 @@ const renderOptions = {
         </blockquote>
       );
     },
+    // @ts-ignore
     [INLINES.HYPERLINK]: (node, children) => {
       return (
         <a href={node.data.uri} className="text-blue-600 underline hover:text-blue-800">
@@ -131,14 +139,14 @@ export default async function ProjectPage(props) {
                         <img
                           src={`https:${contentItem.fields.normalCover.fields.file.url}`}
                           alt="Normal Cover"
-                          className="your-custom-class"
+                          className="mb-4"
                         />
                       </div>
                     )}
 
                     {/* Render Wide Cover */}
                     {contentItem.fields.wideCover && (
-                      <div className="relative w-full sm:grid grid-cols-2 gap-4">
+                      <div className="relative w-full sm:grid grid-cols-2 gap-4 m-4">
                         <img
                           src={`https:${contentItem.fields.wideCover.fields.file.url}`}
                           alt="Wide Cover"
@@ -149,7 +157,7 @@ export default async function ProjectPage(props) {
 
                     {/* Render Side-to-Side Image Cover */}
                     {contentItem.fields.sideToSideImageCover && (
-                      <div className="relative w-full sm:grid grid-cols-2 gap-4">
+                      <div className="relative w-full sm:grid grid-cols-2 gap-4 mb-8">
                         {/* @ts-ignore */}
                         {contentItem.fields.sideToSideImageCover.map((image, idx) => (
                           <img
@@ -186,7 +194,7 @@ export default async function ProjectPage(props) {
 
                     {/* Render Rich Text Content */}
                     {contentItem.fields.richContent && (
-                      <div className="max-w-5xl sm:ml-40 mb-4 grid grid-cols-rich-content">
+                      <div className="max-w-5xl sm:ml-40 grid grid-cols-rich-content border-b border-gray-200">
                         <div className="col-span-full sm:col-start-2">
                           {documentToReactComponents(contentItem.fields.richContent, renderOptions)}
                         </div>
