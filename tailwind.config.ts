@@ -17,7 +17,7 @@ const config: Config = {
         serif: ['var(--font-baskervville)'],
       },
       gridTemplateColumns: {
-        'header-title': '12% 1fr 24%',
+        'rich-content': '24% 1fr',
       }
     },
   },
