@@ -1,5 +1,6 @@
 import { getEntryBySlug, createContentClient } from "../utils/contentful";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import { Header } from "../components/Header"
 import { Footer } from "../components/Footer";
 import { Accordion } from "../components/Accordion";
@@ -23,6 +24,52 @@ export async function generateStaticParams() {
     slug: project.fields.projectSlug,
   }));
 }
+
+const renderOptions = {
+  renderNode: {
+    [BLOCKS.PARAGRAPH]: (node, children) => {
+      return <p className="text-base font-light mb-2">{children}</p>;
+    },
+    [BLOCKS.HEADING_1]: (node, children) => {
+      return <h1 className="text-base mb-3">{children}</h1>;
+    },
+    [BLOCKS.HEADING_2]: (node, children) => {
+      return <h2 className="text-base mb-3">{children}</h2>;
+    },
+    [BLOCKS.UL_LIST]: (node, children) => {
+      return (
+        <ul className="list-disc list-outside pl-5 sm:pl-10 mb-2">
+          {children}
+        </ul>
+      );
+    },
+    [BLOCKS.OL_LIST]: (node, children) => {
+      return (
+        <ol className="list-decimal list-outside pl-5 sm:pl-10 mb-2">
+          {children}
+        </ol>
+      );
+    },
+    [BLOCKS.LIST_ITEM]: (node, children) => {
+      return <li className="mb-1">{children}</li>;
+    },
+    [BLOCKS.QUOTE]: (node, children) => {
+      return (
+        <blockquote className="border-l-4 border-gray-400 pl-4 italic text-gray-700 mb-4">
+          {children}
+        </blockquote>
+      );
+    },
+    [INLINES.HYPERLINK]: (node, children) => {
+      return (
+        <a href={node.data.uri} className="text-blue-600 underline hover:text-blue-800">
+          {children}
+        </a>
+      );
+    },
+  },
+};
+
 
 // @ts-ignore
 export default async function ProjectPage(props) {
@@ -141,7 +188,7 @@ export default async function ProjectPage(props) {
                     {contentItem.fields.richContent && (
                       <div className="max-w-5xl sm:ml-40 mb-4 grid grid-cols-rich-content">
                         <div className="col-span-full sm:col-start-2">
-                          {documentToReactComponents(contentItem.fields.richContent)}
+                          {documentToReactComponents(contentItem.fields.richContent, renderOptions)}
                         </div>
                       </div>
                     )}
