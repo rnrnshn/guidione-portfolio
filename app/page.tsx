@@ -22,45 +22,47 @@ export default async function Home() {
 
         <section>
           <div className="flex flex-col sm:grid sm:grid-cols-3 gap-4">
-            {projects.map((project) => {
-              // @ts-ignore
-              const videoUrl = project?.projectVideoCover?.fields?.file?.url;
-              const projectSlug = project?.projectSlug ?? "#";
-
-              return (
+            {projects
+              .filter((project) => project?.showProject !== false) // Filter projects based on the 'showProject' attribute
+              .map((project) => {
                 // @ts-ignore
-                <div key={projectSlug}>
-                  <Link href={`/${projectSlug}`}>
-                    <aside className="relative flex flex-col aspect-custom bg-slate-500 rounded-3xl">
-                      <div className="hidden sm:block absolute bottom-0 left-0 z-10 sm:p-4">
-                        {/* @ts-ignore */}
-                        <h2 className="text-sm">{project.projectTitle}</h2>
-                        {/* @ts-ignore */}
-                        <h3 className="text-sm">{project.projectDescription}</h3>
-                      </div>
-                      {videoUrl ? (
-                        <video
-                          preload="auto"
-                          loop
-                          autoPlay
-                          muted
-                          className="absolute inset-0 w-full h-full object-cover object-center rounded-3xl"
-                        >
-                          <source src={videoUrl} type="video/mp4" />
-                          Your browser does not support the video tag.
-                        </video>
-                      ) : (
-                        <img
-                          src="/default-cover.jpg"
-                          alt="Default cover"
-                          className="absolute inset-0 w-full h-full object-cover object-center rounded-3xl"
-                        />
-                      )}
-                    </aside>
-                  </Link>
-                </div>
-              );
-            })}
+                const videoUrl = project?.projectVideoCover?.fields?.file?.url;
+                const projectSlug = project?.projectSlug ?? "#";
+
+                return (
+                  // @ts-ignore
+                  <div key={projectSlug}>
+                    <Link href={`/${projectSlug}`}>
+                      <aside className="relative flex flex-col aspect-custom bg-slate-500 rounded-3xl">
+                        <div className="hidden sm:block absolute bottom-0 left-0 z-10 sm:p-4">
+                          {/* @ts-ignore */}
+                          <h2 className="text-sm">{project.projectTitle}</h2>
+                          {/* @ts-ignore */}
+                          <h3 className="text-sm">{project.projectDescription}</h3>
+                        </div>
+                        {videoUrl ? (
+                          <video
+                            preload="auto"
+                            loop
+                            autoPlay
+                            muted
+                            className="absolute inset-0 w-full h-full object-cover object-center rounded-3xl"
+                          >
+                            <source src={videoUrl} type="video/mp4" />
+                            Your browser does not support the video tag.
+                          </video>
+                        ) : (
+                          <img
+                            src="/default-cover.jpg"
+                            alt="Default cover"
+                            className="absolute inset-0 w-full h-full object-cover object-center rounded-3xl"
+                          />
+                        )}
+                      </aside>
+                    </Link>
+                  </div>
+                );
+              })}
           </div>
         </section>
       </main>
