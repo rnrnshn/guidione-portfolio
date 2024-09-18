@@ -33,12 +33,12 @@ export default async function Home() {
                   // @ts-ignore
                   <div key={projectSlug}>
                     <Link href={`/${projectSlug}`}>
-                      <aside className="relative flex flex-col aspect-custom bg-slate-500 rounded-3xl">
-                        <div className="hidden sm:block absolute bottom-0 left-0 z-10 sm:p-4">
+                      <aside className="relative flex flex-col aspect-custom bg-slate-500 rounded-3xl group">
+                        <div className="absolute bottom-0 left-0 z-10 sm:p-4 opacity-0 transform translate-y-4 transition-opacity duration-300 group-hover:opacity-100 group-hover:translate-y-0 bg-white/50 w-full">
                           {/* @ts-ignore */}
-                          <h2 className="text-sm">{project.projectTitle}</h2>
+                          <h2 className="text-sm text-black">{project.projectTitle}</h2>
                           {/* @ts-ignore */}
-                          <h3 className="text-sm">{project.projectDescription}</h3>
+                          <h3 className="text-sm text-black">{project.projectDescription}</h3>
                         </div>
                         {videoUrl ? (
                           <video

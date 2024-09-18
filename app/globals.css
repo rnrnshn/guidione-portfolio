@@ -11,3 +11,13 @@ body {
     width: 42ch;
   }
 }
+
+.large-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-position: left center;
+  object-fit: contain;
+  image-rendering: auto;
+}

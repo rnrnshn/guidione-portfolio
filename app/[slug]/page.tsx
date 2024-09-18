@@ -1,7 +1,7 @@
 import { getEntryBySlug, createContentClient } from "../utils/contentful";
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { BLOCKS, INLINES } from '@contentful/rich-text-types';
-import { Header } from "../components/Header"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS, INLINES } from "@contentful/rich-text-types";
+import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { Accordion } from "../components/Accordion";
 import { AccordionProjectItem } from "../components/AccordionProjectItem";
@@ -71,14 +71,16 @@ const renderOptions = {
     // @ts-ignore
     [INLINES.HYPERLINK]: (node, children) => {
       return (
-        <a href={node.data.uri} className="text-blue-600 underline hover:text-blue-800">
+        <a
+          href={node.data.uri}
+          className="text-blue-600 underline hover:text-blue-800"
+        >
           {children}
         </a>
       );
     },
   },
 };
-
 
 // @ts-ignore
 export default async function ProjectPage(props) {
@@ -87,7 +89,13 @@ export default async function ProjectPage(props) {
 
   const project = await getEntryBySlug(slug, "projects");
 
-  const { projectTitle, projectDescription, projectWideCover, projectVideoCover, projectContents } = project.fields;
+  const {
+    projectTitle,
+    projectDescription,
+    projectWideCover,
+    projectVideoCover,
+    projectContents,
+  } = project.fields;
 
   return (
     <div className="max-w-[1880px] mx-auto">
@@ -97,8 +105,7 @@ export default async function ProjectPage(props) {
 
         <section className="max-w-6xl mx-auto mb-4">
           {/* <h3>{projectTitle}</h3> */}
-          <h1
-            className="flex flex-col sm:gap-2 sm:place-self-center text-2xl sm:text-4xl font-serif text-[#888] sm:leading-[52px]">
+          <h1 className="flex flex-col sm:gap-2 sm:place-self-center text-2xl sm:text-4xl font-serif text-[#888] sm:leading-[52px]">
             {/* @ts-ignore */}
             {projectDescription}
           </h1>
@@ -120,8 +127,7 @@ export default async function ProjectPage(props) {
         <section className="">
           <div className="">
             <div className="max-w-5xl sm:ml-40">
-              <h1
-                className="text-2xl sm:text-3xl font-serif italic text-zinc-600 sm:leading-[52px]">
+              <h1 className="text-2xl sm:text-3xl font-serif italic text-zinc-600 sm:leading-[52px]">
                 Project context
               </h1>
             </div>
@@ -166,6 +172,15 @@ export default async function ProjectPage(props) {
                       <WideCover
                         imageUrl={`https:${contentItem.fields.wideCover.fields.file.url}`}
                         altText="Wide Cover"
+                        imageSectionHeight={
+                          contentItem.fields.imageSectionHeight
+                        }
+                        imageContainerHeight={
+                          contentItem.fields.imageContainerHeight
+                        }
+                        imageContainerWidth={
+                          contentItem.fields.imageContainerWidth
+                        }
                       />
                     )}
 
@@ -173,14 +188,16 @@ export default async function ProjectPage(props) {
                     {contentItem.fields.sideToSideImageCover && (
                       <div className="relative w-full sm:grid grid-cols-2 gap-4 mb-8">
                         {/* @ts-ignore */}
-                        {contentItem.fields.sideToSideImageCover.map((image, idx) => (
-                          <img
-                            key={idx}
-                            src={`https:${image.fields.file.url}`}
-                            alt={`Side-to-Side Cover ${idx + 1}`}
-                            className="rounded-3xl w-full h-full max-w-full"
-                          />
-                        ))}
+                        {contentItem.fields.sideToSideImageCover.map(
+                          (image, idx) => (
+                            <img
+                              key={idx}
+                              src={`https:${image.fields.file.url}`}
+                              alt={`Side-to-Side Cover ${idx + 1}`}
+                              className="rounded-3xl w-full h-full max-w-full"
+                            />
+                          )
+                        )}
                       </div>
                     )}
 
@@ -210,7 +227,10 @@ export default async function ProjectPage(props) {
                     {contentItem.fields.richContent && (
                       <div className="max-w-5xl sm:ml-40 grid grid-cols-rich-content border-b border-gray-200">
                         <div className="col-span-full sm:col-start-2">
-                          {documentToReactComponents(contentItem.fields.richContent, renderOptions)}
+                          {documentToReactComponents(
+                            contentItem.fields.richContent,
+                            renderOptions
+                          )}
                         </div>
                       </div>
                     )}
