@@ -8,11 +8,16 @@ import { Breadcrumb } from "../components/Breadcrumb";
 import experienceData from "../utils/jobs.json";
 
 export default function About() {
+  const breadcrumbs = [
+    { label: "Projects", url: "/" },
+    { label: "About" },
+  ]
+
   return (
     <div className="max-w-[1880px] mx-auto">
       <Header />
       <main className="px-4 sm:px-4 sm:mb-20">
-        <Breadcrumb />
+      <Breadcrumb breadcrumbs={breadcrumbs} />
         <Image
           src={GuidioneWide}
           alt="Logo"
