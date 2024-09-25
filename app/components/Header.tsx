@@ -8,7 +8,7 @@ export function Header() {
   const pathname = usePathname();
 
   const linkClasses = "hover:text-orange-500 text-gray-700 transition-all duration-300 ease-in-out";
-  const activeLinkClasses = "border-b-2 border-orange-500 text-orange-500 mb-0 pb-1"; // Styles for active link
+  const activeLinkClasses = "border-b-2 border-orange-500 text-orange-500 mb-0 pb-1";
 
   return (
     <header className="flex justify-between items-center px-4 pt-4 sm:px-4 sm:py-2">
