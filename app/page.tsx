@@ -6,6 +6,8 @@ import Link from "next/link";
 export default async function Home() {
   const projects = await getProjects();
 
+  const linkClasses = "hover:text-orange-500 text-gray-700 transition-all duration-300 ease-in-out";
+
   return (
     <div className="min-h-screen max-w-screen-2xl mx-auto flex flex-col">
       <Header />
@@ -15,7 +17,7 @@ export default async function Home() {
             <span>Hello, I'm <span className="text-black">Guidione</span>. </span>
             <span>I am <span className="text-black">France</span> based Product Designer. </span>
             <span>
-              I lead design at <span className="text-black italic">23point5</span>, previously at <span className="text-black italic">Shopify</span>.
+              I lead design at <Link href='https://www.23point5.com/' target="_blank" className={`${linkClasses} text-black italic`}> 23point5</Link>, previously at <Link href="https://blockchain.shopify.dev/" target="_blank" className={`${linkClasses} text-black italic`}>Shopify</Link>.
             </span>
           </h1>
         </section>
