@@ -10,6 +10,14 @@ export function Header() {
   const linkClasses = "hover:text-orange-500 text-gray-700 transition-all duration-300 ease-in-out";
   const activeLinkClasses = "border-b-2 border-orange-500 text-orange-500 mb-0 pb-1";
 
+  // @ts-ignore
+  const scrollToFooter = (e) => {
+    e.preventDefault();
+    
+    // @ts-ignore
+    document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <header className="flex justify-between items-center px-4 pt-4 sm:px-4 sm:py-2">
       <div>
@@ -29,7 +37,7 @@ export function Header() {
         <Link href='/about' className={`${linkClasses} ${pathname === '/about' ? activeLinkClasses : ''}`}>
           About
         </Link>
-        <Link href='/contact' className={`${linkClasses} ${pathname === '/contact' ? activeLinkClasses : ''}`}>
+        <Link href="/" onClick={scrollToFooter} className={`${linkClasses}`}>
           Contact
         </Link>
       </nav>

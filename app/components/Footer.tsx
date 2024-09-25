@@ -7,7 +7,7 @@ export function Footer() {
   const buttonLinkClasses = "hover:border-orange-500 hover:text-orange-500 transition-all duration-300 ease-in-out"; 
   
   return (
-    <footer className="px-4 py-8 sm:px-48 sm:pb-16 sm:pt-8 border-t border-zinc-100">
+    <footer id="footer" className="px-4 py-8 sm:px-48 sm:pb-16 sm:pt-8 border-t border-zinc-100">
       <div className="flex flex-col gap-2">
         <h3 className="sm:text-xl font-normal">Get in touch</h3>
         <div className="flex flex-col gap-4 sm:flex-row justify-between">
