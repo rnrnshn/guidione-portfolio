@@ -13,7 +13,7 @@ export function Header() {
   // @ts-ignore
   const scrollToFooter = (e) => {
     e.preventDefault();
-    
+
     // @ts-ignore
     document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });
   };
@@ -21,13 +21,15 @@ export function Header() {
   return (
     <header className="flex justify-between items-center px-4 pt-4 sm:px-4 sm:py-2">
       <div>
-        <Image
-          src='/logo.png'
-          alt="Logo"
-          width={50}
-          height={50}
-          className="rounded-full"
-        />
+        <Link href='/'>
+          <Image
+            src='/logo.png'
+            alt="Logo"
+            width={50}
+            height={50}
+            className="rounded-full"
+          />
+        </Link>
       </div>
 
       <nav className="flex gap-4">
