@@ -97,11 +97,16 @@ export default async function ProjectPage(props) {
     projectContents,
   } = project.fields;
 
+  const breadcrumbs = [
+    { label: "Projects", url: "/" },
+    { label: projectTitle },
+  ]
+
   return (
     <div className="max-w-[1880px] mx-auto">
       <Header />
       <main className="px-4 sm:px-4 sm:mb-8">
-        <Breadcrumb />
+      <Breadcrumb breadcrumbs={breadcrumbs} />
 
         <section className="max-w-6xl mx-auto mb-4">
           {/* <h3>{projectTitle}</h3> */}
