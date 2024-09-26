@@ -31,20 +31,23 @@ export const WideCover = ({
   }, []);
 
   return (
-    <div className="relative w-full sm:grid grid-cols-2 gap-4 mb-4">
+    <div className="relative w-full mb-4">
       <div
         ref={zoomRef}
-        className="image-section aspect-image-section col-span-2 w-full bg-red-300 relative overflow-x-scroll overflow-y-hidden"
-        style={{ height: `${imageSectionHeight}px` }} // Dynamically set height
+        className="image-section w-full bg-red-300 relative overflow-x-scroll overflow-y-hidden"
+        style={{
+          height: "auto", // For mobile (default)
+          minHeight: "300px", // Ensuring a minimum height on mobile
+        }}
       >
         <div
-          className="image-container aspect-image-container absolute left-0 top-0 bg-blue-400"
+          className="image-container absolute left-0 top-0 bg-blue-400"
           style={{
-            height: `${imageContainerHeight}px`, // Dynamically set height
-            width: `${imageContainerWidth}%`, // Dynamically set width
+            height: "100%", // For mobile (default)
+            width: `${imageContainerWidth}%`,
           }}
         >
-          <div className="image_wrapper zoomist-wrapper absolute inset-0">
+          <div className="image_wrapper absolute inset-0">
             <Image
               src={imageUrl}
               alt={altText}
@@ -52,11 +55,23 @@ export const WideCover = ({
               priority={true}
               quality={100}
               unoptimized={true}
-              className="large-image zoomist-image block w-full h-full object-left object-cover"
+              className="block w-full h-full object-left object-cover"
             />
           </div>
         </div>
       </div>
+
+      {/* Tailwind responsive styling */}
+      <style jsx>{`
+        @media (min-width: 640px) {
+          .image-section {
+            height: ${imageSectionHeight}px; /* For larger screens */
+          }
+          .image-container {
+            height: ${imageContainerHeight}px; /* For larger screens */
+          }
+        }
+      `}</style>
     </div>
   );
 };
