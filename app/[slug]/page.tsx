@@ -232,7 +232,7 @@ export default async function ProjectPage(props) {
                     {/* Render Rich Text Content */}
                     {contentItem.fields.richContent && (
                       <div className="max-w-5xl sm:ml-40 grid grid-cols-rich-content border-b border-gray-200">
-                        <div className="col-span-full sm:col-start-2">
+                        <div className="mt-4 col-span-full sm:col-start-2">
                           {documentToReactComponents(
                             contentItem.fields.richContent,
                             renderOptions
