@@ -30,7 +30,7 @@ export const AccordionItem = ({ title, subTitle, children, isActive, onToggle })
           aria-labelledby={`accordion-header-${title}`}
           className="w-full grid grid-cols-3 p-4 text-gray-500 transition-all duration-300 ease-in-out"
         >
-          <div className='col-start-2 col-end-4'>
+          <div className='col-span-full sm:col-start-2 sm:col-end-4'>
             {children}
           </div>
         </div>
