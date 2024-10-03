@@ -35,21 +35,21 @@ export function Footer() {
           </div>
 
           <div className="sm:self-end flex gap-4 sm:gap-8">
-            <Link
+            {/* <Link
               href='https://drive.google.com/uc?export=download&id=1x-ly9V_TByeLn2BPBBep3852qxrNd2tr'
               className={`text-sm font-normal flex gap-2 items-center justify-center py-2 px-4 border border-slate-900 rounded-full ${buttonLinkClasses}`}
             >
               <span>Resume</span>
               <LiaDownloadSolid />
-            </Link>
+            </Link> */}
 
-            <Link
+            {/* <Link
               href="https://drive.google.com/uc?export=download&id=1vUawRiuFzsOh2shYTryyutMDnse2Vt6p"
               className={`text-sm font-normal flex gap-2 items-center justify-center px-4 border border-slate-900 rounded-full ${buttonLinkClasses}`}
             >
               <span className="font-sm">Portfolio</span>
               <LiaDownloadSolid />
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
