@@ -14,7 +14,7 @@ export const AccordionItem = ({ title, subTitle, children, isActive, onToggle })
         id={`accordion-header-${title}`}
       >
         <span className="flex-1 sm:text-2xl text-black italic font-serif">{title}</span>
-        <span className="sm:text-base font-light text-gray-500">{subTitle}</span>
+        <span className="text-sm sm:text-base font-light text-gray-500">{subTitle}</span>
         <div className='sm:justify-self-end'>
           {isActive ? (
             <FiChevronUp className="w-5 h-5 text-gray-500" />
