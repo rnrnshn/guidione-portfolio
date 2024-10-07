@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter_Tight, Baskervville } from "next/font/google";
 import "./globals.css";
+import { AOSInit } from "./components/AOSWrapper";
 
 const inter_tight = Inter_Tight({
   subsets: ["latin"],
@@ -24,6 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter_tight.variable} ${baskervville.variable}`}>
+      <AOSInit />
       <body className="font-sans">{children}</body>
     </html>
   );

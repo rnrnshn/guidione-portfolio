@@ -41,13 +41,13 @@ export const WideCover = ({
         }}
       >
         <div
-          className="image-container absolute left-0 top-0 bg-blue-400"
+          className="zoomist-container image-container absolute left-0 top-0 bg-blue-400"
           style={{
             height: "100%", // For mobile (default)
             width: `${imageContainerWidth}%`,
           }}
         >
-          <div className="image_wrapper absolute inset-0">
+          <div className="zoomist-wrapper image_wrapper absolute inset-0">
             <Image
               src={imageUrl}
               alt={altText}
@@ -55,7 +55,7 @@ export const WideCover = ({
               priority={true}
               quality={100}
               unoptimized={true}
-              className="block w-full h-full object-left object-cover"
+              className="large-image zoomist-image block w-full h-full object-left object-cover"
             />
           </div>
         </div>

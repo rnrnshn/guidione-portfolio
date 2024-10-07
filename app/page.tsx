@@ -13,7 +13,7 @@ export default async function Home() {
       <Header />
       <main className="px-4 sm:px-4 pb-8 sm:pb-16">
         <section className="sm:grid sm:grid-cols-header-title sm:p-20 pr-24 py-8">
-          <h1 className="flex flex-col sm:gap-2 header-title sm:place-self-center sm:col-start-2 sm:col-end-3 text-2xl sm:text-4xl font-serif text-[#888] sm:leading-[52px]">
+          <h1 className="flex flex-col sm:gap-2 header-title sm:place-self-center sm:col-start-2 sm:col-end-3 text-2xl sm:text-4xl font-serif text-[#888] sm:leading-[52px]" data-aos="fade-up">
             <span>Hello, I'm <span className="text-black">Guidione</span>. </span>
             <span>I am <span className="text-black">France</span> based Product Designer. </span>
             <span>
@@ -23,7 +23,7 @@ export default async function Home() {
         </section>
 
         <section>
-          <div className="flex flex-col sm:grid sm:grid-cols-3 gap-4">
+          <div className="flex flex-col sm:grid sm:grid-cols-3 gap-4" data-aos="fade-up">
             {projects
               .filter((project) => project?.showProject !== false) // Filter projects based on the 'showProject' attribute
               .map((project) => {
