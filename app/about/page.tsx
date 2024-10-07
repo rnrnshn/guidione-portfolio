@@ -22,10 +22,12 @@ export default function About() {
           src={GuidioneWide}
           alt="Logo"
           className="rounded-lg mb-8"
+          data-aos="fade-up"
         />
 
         <section className="max-w-6xl mx-auto">
-          <p className="text-zinc-500 leading-loose mb-8">
+          <p className="text-zinc-500 leading-loose mb-8"
+          data-aos="fade-up">
             I am a Product Designer with +9 years of working experience. I have worked for Shopify - Blockchain team, The World Bank, and a few early-stage startups. I hold a degree in Economics and a not concluded Honours in Interaction Design. I am a passionate design Advocate, I have authored a book, spearheaded conferences, and spoken at multiple events worldwide
           </p>
 
@@ -109,7 +111,7 @@ export default function About() {
             </aside>
           </div>
 
-          <div className="sm:hidden justify-center bg-gray-100 mb-8">
+          <div className="sm:hidden justify-center bg-gray-100 mb-8" data-aos="fade-up">
             <Accordion>
               { /* @ts-ignore */}
               <AccordionItem title="Education">
