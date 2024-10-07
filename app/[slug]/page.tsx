@@ -110,7 +110,7 @@ export default async function ProjectPage(props) {
 
         <section className="max-w-6xl mx-auto mb-4">
           {/* <h3>{projectTitle}</h3> */}
-          <h1 className="flex flex-col sm:gap-2 sm:place-self-center text-2xl sm:text-4xl font-serif text-[#888] sm:leading-[52px]">
+          <h1 className="flex flex-col sm:gap-2 sm:place-self-center text-2xl sm:text-4xl font-serif text-[#888] sm:leading-[52px]" data-aos="fade-right">
             {/* @ts-ignore */}
             {projectDescription}
           </h1>
@@ -125,6 +125,7 @@ export default async function ProjectPage(props) {
               alt={projectTitle}
               fill={true}
               className="rounded-3xl"
+              data-aos="fade-up"
             />
           </div>
         )}
