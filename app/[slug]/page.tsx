@@ -178,15 +178,6 @@ export default async function ProjectPage(props) {
                       <WideCover
                         imageUrl={`https:${contentItem.fields.wideCover.fields.file.url}`}
                         altText="Wide Cover"
-                        imageSectionHeight={
-                          contentItem.fields.imageSectionHeight
-                        }
-                        imageContainerHeight={
-                          contentItem.fields.imageContainerHeight
-                        }
-                        imageContainerWidth={
-                          contentItem.fields.imageContainerWidth
-                        }
                       />
                     )}
 
